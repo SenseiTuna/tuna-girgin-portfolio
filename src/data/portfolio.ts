@@ -94,12 +94,12 @@ export const copy = {
       en: 'Hi, I am Tuna.',
     },
     headline: {
-      tr: 'Yazılım, görüntü işleme ve prototipleme taraflarını birleştiren projeler geliştiriyorum.',
-      en: 'I build projects that connect software, computer vision and prototyping.',
+      tr: 'Bilgisayarlı görü, oyun geliştirme ve gömülü sistemleri birleştiren gerçek problem odaklı yazılım projeleri geliştiriyorum.',
+      en: 'I build real-world software projects across computer vision, game development and embedded systems.',
     },
     body: {
-      tr: 'Ankara Üniversitesi Yazılım Mühendisliği öğrencisiyim. Görüntü işleme, oyun sistemleri, gömülü sistemler ve otomasyon alanlarında üretmeyi; fikirleri çalışan prototiplere dönüştürmeyi seviyorum.',
-      en: 'I am a Software Engineering student at Ankara University. I enjoy building in computer vision, game systems, embedded systems and automation, and turning ideas into working prototypes.',
+      tr: 'Ankara Üniversitesi Yazılım Mühendisliği öğrencisiyim. Görüntü işleme, oyun sistemleri, otomasyon ve donanım-yazılım entegrasyonu alanlarında çalışan prototipler geliştirmeye odaklanıyorum.',
+      en: 'I am a Software Engineering student at Ankara University. I focus on building working prototypes in computer vision, game systems, automation and software-hardware integration.',
     },
     primaryCta: { tr: 'Projeleri İncele', en: 'View Projects' },
     secondaryCta: { tr: 'CV İndir', en: 'Download CV' },
@@ -123,8 +123,8 @@ export const copy = {
   about: {
     title: { tr: 'Hakkımda', en: 'About' },
     body: {
-      tr: 'Ankara Üniversitesi Yazılım Mühendisliği öğrencisiyim. Bilgisayarlı görü, oyun geliştirme, gömülü sistemler, otomasyon ve Ar-Ge yazılım geliştirme alanlarında proje üretmeye odaklanıyorum. Donanım, prototipleme ve yazılım taraflarını birlikte düşünmeyi seviyorum; bu yüzden projelerimde görüntü işleme, oyun mekaniği, tarayıcı otomasyonu, test ve hata ayıklama süreçleri bir araya gelebiliyor.',
-      en: 'I am a Software Engineering student at Ankara University. My work focuses on computer vision, game development, embedded systems, automation and R&D software development. I like connecting hardware, prototyping and software thinking, which leads my projects to combine image processing, gameplay systems, browser automation and testing/debugging workflows.',
+      tr: 'Ankara Üniversitesi Yazılım Mühendisliği öğrencisiyim. Bilgisayarlı görü, oyun geliştirme, otomasyon ve gömülü sistemler alanlarında gerçek kullanım senaryolarına yönelik projeler geliştiriyorum. Projelerimde yazılım, donanım, prototipleme ve hata ayıklama süreçlerini birlikte ele alarak çalışan ve anlaşılır çözümler üretmeye odaklanıyorum.',
+      en: 'I am a Software Engineering student at Ankara University. I build projects focused on real-use scenarios in computer vision, game development, automation and embedded systems. I like combining software, hardware, prototyping and debugging workflows to create practical and understandable solutions.',
     },
   },
   sections: {
@@ -150,8 +150,8 @@ export const copy = {
   },
   contact: {
     intro: {
-      tr: 'Staj, junior yazılım, Ar-Ge, bilgisayarlı görü, oyun geliştirme veya gömülü sistem fırsatları için iletişime geçebilirsiniz.',
-      en: 'Open to internship, junior software, R&D, computer vision, game development and embedded systems opportunities.',
+      tr: 'Staj, junior yazılım, Ar-Ge, bilgisayarlı görü, oyun geliştirme ve gömülü sistem fırsatları için e-posta, GitHub veya LinkedIn üzerinden iletişime geçebilirsiniz.',
+      en: 'I am open to internship, junior software, R&D, computer vision, game development and embedded systems opportunities. You can reach me via email, GitHub or LinkedIn.',
     },
   },
 };
@@ -219,25 +219,25 @@ export const projects: Project[] = [
       en: 'School and team project',
     },
     summary: {
-      tr: 'Kampüs araç giriş-çıkış takibi için görüntü işleme tabanlı araç ve plaka takip sistemi.',
-      en: 'Computer vision based vehicle and license plate tracking system for campus entry and exit monitoring.',
+      tr: 'Kampüs araç giriş-çıkışlarını takip etmek için geliştirilen görüntü işleme tabanlı araç ve plaka tanıma sistemi.',
+      en: 'Computer vision based vehicle and license plate recognition system for campus entry and exit monitoring.',
     },
     description: {
-      tr: 'Kampüs güvenliği ve araç hareketlerinin izlenmesi için geliştirilen sistem; araç algılama, plaka okuma, kayıt tutma ve giriş-çıkış akışlarını bir araya getirir. Proje okul içinde kullanılacağı için kaynak kodu açık değildir.',
-      en: 'Built for campus security and vehicle movement monitoring, this system combines vehicle detection, license plate OCR, record keeping and entry-exit workflows. The source code is not public because the project is intended for internal campus use.',
+      tr: 'Kampüs güvenliği ve araç hareketlerinin izlenmesi için geliştirilen sistem; araç algılama, plaka okuma, kayıt tutma ve giriş-çıkış takibini tek bir akışta birleştirir. Proje okul içi kullanım amacıyla geliştirildiği için kaynak kodu açık değildir.',
+      en: 'Built for campus security and vehicle movement monitoring, this system combines vehicle detection, license plate OCR, record keeping and entry-exit tracking in a single workflow. The source code is not public because the project was developed for internal school use.',
     },
     caseStudy: {
       tr: {
-        problem: 'Kampüs araç giriş-çıkışlarının manuel takibi hem zaman kaybettiriyor hem de kayıtların tutarlı yönetilmesini zorlaştırıyordu.',
-        solution: 'Araç algılama, plaka okuma ve yerel kayıt tutma akışlarını birleştiren görüntü işleme tabanlı bir takip sistemi tasarlandı.',
-        contribution: 'YOLO, OpenCV ve OCR bileşenleriyle çalışan algılama akışlarına; kayıt yapısı ve sistem mimarisi kararlarına katkı sağladım.',
-        outcome: 'Okul içinde kullanılmak üzere geliştirilen, kaynak kodu kapalı tutulan ve kampüs güvenliği senaryosuna odaklanan bir ekip projesi ortaya çıktı.',
+        problem: 'Kampüs araç giriş-çıkışlarının manuel takip edilmesi zaman kaybına neden oluyor ve kayıtların düzenli tutulmasını zorlaştırıyordu.',
+        solution: 'YOLO tabanlı araç algılama, OCR ile plaka okuma ve SQLite ile kayıt yönetimini birleştiren görüntü işleme tabanlı bir takip sistemi geliştirildi.',
+        contribution: 'Araç algılama ve plaka okuma akışlarının kurulmasına, kayıt yapısının tasarlanmasına ve sistem mimarisi kararlarının şekillendirilmesine katkı verdim.',
+        outcome: 'Kampüs güvenliği senaryosuna yönelik, araç hareketlerini daha düzenli ve izlenebilir hale getiren kapalı kaynaklı bir ekip projesi ortaya çıktı.',
       },
       en: {
-        problem: 'Manual tracking of campus vehicle entry and exit created friction and made consistent record keeping harder.',
-        solution: 'The team designed a computer vision based tracking system that combines vehicle detection, license plate OCR and local record keeping.',
-        contribution: 'I contributed to detection workflows using YOLO, OpenCV and OCR, and supported decisions around records and system architecture.',
-        outcome: 'The result is a private team project built for internal school use and focused on a real campus security workflow.',
+        problem: 'Manual tracking of campus vehicle entry and exit caused time loss and made consistent record keeping difficult.',
+        solution: 'The team developed a computer vision based tracking system combining YOLO vehicle detection, OCR-based license plate reading and SQLite record management.',
+        contribution: 'I contributed to the vehicle detection and license plate reading workflows, record structure design and system architecture decisions.',
+        outcome: 'The result is a private team project focused on making campus vehicle movement more organized and traceable.',
       },
     },
     role: {
@@ -251,14 +251,14 @@ export const projects: Project[] = [
     technologies: ['Python', 'YOLO', 'OpenCV', 'OCR', 'SQLite'],
     contributions: {
       tr: [
-        'Araç ve plaka takibi için görüntü işleme akışlarına katkı sağladım.',
-        'YOLO, OpenCV ve OCR teknolojileriyle çalışan sistem mimarisine destek verdim.',
-        'Araç giriş-çıkış kayıtlarının tutulduğu yerel veri akışlarının tasarımında yer aldım.',
+        'Araç algılama ve plaka okuma için görüntü işleme akışlarının kurulmasına katkı verdim.',
+        'YOLO, OpenCV, OCR ve SQLite bileşenlerinin aynı sistem akışında kullanılmasını sağladım.',
+        'Araç giriş-çıkış kayıtlarının tutulacağı yerel veri yapısının tasarımında yer aldım.',
       ],
       en: [
-        'Contributed to computer vision workflows for vehicle and license plate tracking.',
-        'Supported the system architecture using YOLO, OpenCV and OCR technologies.',
-        'Worked on local data flow design for vehicle entry and exit records.',
+        'Contributed to computer vision workflows for vehicle detection and license plate reading.',
+        'Provided the integration of YOLO, OpenCV, OCR and SQLite in the same system workflow.',
+        'Worked on the local data structure used for vehicle entry and exit records.',
       ],
     },
     image: '/projects/campus-vehicle-system.png',
@@ -297,8 +297,8 @@ export const projects: Project[] = [
       },
     },
     role: {
-      tr: 'Proje lideri, sanat yönetmeni ve geliştirici',
-      en: 'Project leader, art director and developer',
+      tr: 'Oyun sistemleri geliştiricisi, sanat yönetmeni ve proje koordinasyon sorumlusu',
+      en: 'Game systems developer, art director and project coordination contributor',
     },
     status: {
       tr: 'GitHub üzerinde açık ekip projesi',
@@ -307,12 +307,12 @@ export const projects: Project[] = [
     technologies: ['Unity', 'C#'],
     contributions: {
       tr: [
-        'Oynanış mekanikleri, oyuncu yetenekleri ve savaş sistemleri üzerinde çalıştım.',
+        'Unity ve C# ile oynanış mekanikleri, oyuncu yetenekleri ve savaş sistemleri üzerinde çalıştım.',
         'Düşman davranışları, zindan ilerleyişi ve oyun akışı gereksinimlerini yönettim.',
         'Proje liderliği ve sanat yönetmenliği sorumluluklarını geliştirici rolüyle birlikte yürüttüm.',
       ],
       en: [
-        'Worked on gameplay mechanics, player abilities and combat systems.',
+        'Worked on gameplay mechanics, player abilities and combat systems using Unity and C#.',
         'Managed enemy behavior, dungeon progression and game flow requirements.',
         'Led the project and art direction while contributing as a developer.',
       ],
@@ -344,13 +344,13 @@ export const projects: Project[] = [
         problem: 'Yoğun saatlerde TCDD bilet ekranında müsait koltukları hızlı fark etmek zorlaşabiliyor ve kullanıcı gereksiz zaman kaybedebiliyor.',
         solution: 'Sayfadaki DOM verisini okuyarak koltuk durumlarını analiz eden ve müsait koltukları daha görünür hale getiren bir tarayıcı aracı geliştirildi.',
         contribution: 'Projeyi bireysel olarak tasarladım ve geliştirdim; veri okuma mantığı, kullanıcı tarafı görsel iyileştirme ve GitHub üzerinden kurulabilir yapı üzerinde çalıştım.',
-        outcome: 'Kullanıcıların kendi tarayıcılarına ekleyebileceği, açık kaynak kodlu ve pratik bir otomasyon aracı ortaya çıktı.',
+        outcome: 'Kullanıcıların kendi tarayıcısına ekleyebileceği, açık kaynak kodlu, pratik ve görsel destek odaklı bir yardımcı araç ortaya çıktı.',
       },
       en: {
         problem: 'During busy periods, noticing available seats on the TCDD ticket screen can become slow and frustrating.',
         solution: 'I built a browser tool that reads DOM data, analyzes seat states and makes available seats visually easier to notice.',
         contribution: 'I designed and developed the project individually, covering data extraction logic, client-side visual improvements and GitHub-ready installation.',
-        outcome: 'The result is an open-source practical automation tool that users can add to their browser.',
+        outcome: 'The result is an open-source, client-side helper tool that users can add to their browser for visual support.',
       },
     },
     role: {

@@ -40,7 +40,7 @@ function localize<T extends Record<Language, string>>(value: T, language: Langua
 export default function App() {
   const [language, setLanguage] = useState<Language>(() => {
     const saved = window.localStorage.getItem('portfolio-language');
-    return saved === 'en' || saved === 'tr' ? saved : 'tr';
+    return saved === 'en' || saved === 'tr' ? saved : 'en';
   });
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
@@ -89,11 +89,9 @@ export default function App() {
       <InteractiveBackdrop />
       <header className="sticky top-0 z-40 border-b border-white/10 bg-[#05080a]/88 backdrop-blur">
         <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-5 sm:px-6 lg:px-8">
-          <a href="#top" className="flex items-center gap-3">
-            <span className="grid h-9 w-9 place-items-center border border-white/10 bg-white/[0.03] font-mono text-sm font-semibold accent-text">
-              TG
-            </span>
-            <span className="hidden text-sm font-medium text-white/86 sm:inline">{profile.name}</span>
+          <a href="#top" className="flex items-center gap-2 sm:gap-3">
+            <img src="/logo.png" alt="Tuna Girgin logo" className="h-8 w-8 object-contain" />
+            <span className="hidden text-sm font-semibold text-white/86 sm:inline">{profile.name}</span>
           </a>
 
           <nav className="hidden items-center gap-5 lg:flex" aria-label="Primary navigation">
@@ -180,8 +178,8 @@ export default function App() {
                       <p className="font-mono text-xs uppercase tracking-[0.18em] accent-text">{copy.heroPanel.title[language]}</p>
                       <p className="mt-3 max-w-[300px] text-sm leading-6 text-white/64">{copy.heroPanel.signal[language]}</p>
                     </div>
-                    <span className="grid h-12 w-12 shrink-0 place-items-center border border-white/10 bg-white/[0.04] font-mono text-sm font-semibold text-white">
-                      TG
+                    <span className="grid h-12 w-12 shrink-0 place-items-center border border-white/10 bg-white/[0.04] p-2">
+                      <img src="/logo.png" alt="Tuna Girgin logo" className="h-full w-full object-contain" />
                     </span>
                   </div>
 

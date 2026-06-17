@@ -181,7 +181,7 @@ a {
     inset: 0;
     z-index: 1;
     background:
-      linear-gradient(90deg, rgb(2 3 4 / 0.62) 0%, rgb(2 3 4 / 0.18) 46%, rgb(2 3 4 / 0.72) 100%),
+      linear-gradient(90deg, rgb(2 3 4 / 0.62) 0%, rgb(2 3 4 / 0.5) 46%, rgb(2 3 4 / 0.72) 100%),
       linear-gradient(180deg, rgb(2 3 4 / 0.5), transparent 24%, transparent 70%, rgb(2 3 4 / 0.78));
     pointer-events: none;
   }
