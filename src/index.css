@@ -181,8 +181,8 @@ a {
     inset: 0;
     z-index: 1;
     background:
-      linear-gradient(90deg, rgb(2 3 4 / 0.62) 0%, rgb(2 3 4 / 0.5) 46%, rgb(2 3 4 / 0.72) 100%),
-      linear-gradient(180deg, rgb(2 3 4 / 0.5), transparent 24%, transparent 70%, rgb(2 3 4 / 0.78));
+      linear-gradient(90deg, rgb(2 3 4 / 0.42) 0%, rgb(2 3 4 / 0.24) 46%, rgb(2 3 4 / 0.54) 100%),
+      linear-gradient(180deg, rgb(2 3 4 / 0.3), transparent 24%, transparent 70%, rgb(2 3 4 / 0.58));
     pointer-events: none;
   }
 
@@ -202,7 +202,7 @@ a {
     height: 100%;
     object-fit: cover;
     object-position: 62% 30%;
-    filter: grayscale(0.02) brightness(0.7) saturate(1.06) contrast(1.04);
+    filter: grayscale(0.02) brightness(1) saturate(1.1) contrast(1.15);
     transform: scale(1.02);
     transition:
       filter 520ms ease,
@@ -212,7 +212,7 @@ a {
 
   .hero-copy:hover .hero-portrait-bg img,
   .hero-copy:focus-within .hero-portrait-bg img {
-    filter: grayscale(0) brightness(1) saturate(1.12) contrast(1.03);
+    filter: grayscale(0) brightness(1.15) saturate(1.15) contrast(1);
     transform: scale(1.045);
   }
 

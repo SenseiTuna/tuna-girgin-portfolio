@@ -33,19 +33,22 @@ type CssVars = CSSProperties & {
   '--accent-hex': string;
 };
 
+const LANGUAGE_STORAGE_KEY = 'portfolio-language-v2';
+
 function localize<T extends Record<Language, string>>(value: T, language: Language) {
   return value[language];
 }
 
 export default function App() {
   const [language, setLanguage] = useState<Language>(() => {
-    const saved = window.localStorage.getItem('portfolio-language');
+    const saved = window.localStorage.getItem(LANGUAGE_STORAGE_KEY);
     return saved === 'en' || saved === 'tr' ? saved : 'en';
   });
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   useEffect(() => {
-    window.localStorage.setItem('portfolio-language', language);
+    window.localStorage.removeItem('portfolio-language');
+    window.localStorage.setItem(LANGUAGE_STORAGE_KEY, language);
     document.documentElement.lang = language;
   }, [language]);
 
