@@ -4,7 +4,7 @@ A modern bilingual portfolio website built for software engineering internship, 
 
 ## Overview
 
-This site presents selected projects, technical skills, education, work experience, contact links, and a downloadable CV in a responsive single-page experience.
+This portfolio presents selected projects, technical skills, education, work experience, contact links, and a downloadable CV in a responsive single-page experience.
 
 ## Features
 
@@ -21,25 +21,3 @@ This site presents selected projects, technical skills, education, work experien
 - React
 - TypeScript
 - Tailwind CSS
-
-## Development
-
-```bash
-npm install
-npm run dev
-```
-
-## Production Build
-
-```bash
-npm run build
-```
-
-## Deployment
-
-The project is ready to deploy on Vercel using the default Vite settings:
-
-```txt
-Build command: npm run build
-Output directory: dist
-```
