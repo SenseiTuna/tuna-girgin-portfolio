@@ -188,7 +188,7 @@ a {
 
   .hero-portrait-bg {
     position: absolute;
-    inset: 0% -20% -15% -20%;
+    inset: -5% -20% -30% 0%;
     z-index: 0;
     opacity: 0.96;
     mix-blend-mode: screen;
@@ -212,7 +212,7 @@ a {
 
   .hero-copy:hover .hero-portrait-bg img,
   .hero-copy:focus-within .hero-portrait-bg img {
-    filter: grayscale(0) brightness(1.15) saturate(1.15) contrast(1);
+    filter: grayscale(0) brightness(1.1) saturate(1.15) contrast(1);
     transform: scale(1.045);
   }
 
