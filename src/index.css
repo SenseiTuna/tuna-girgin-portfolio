@@ -1,0 +1,327 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  background: #020304;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #020304;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@keyframes modal-overlay-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modal-panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@layer components {
+  .interactive-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+    background: #020304;
+  }
+
+  .interactive-backdrop > * {
+    position: absolute;
+    inset: 0;
+  }
+
+  .backdrop-base {
+    background: #020304;
+  }
+
+  .backdrop-grid {
+    opacity: 0.1;
+    background-image:
+      linear-gradient(rgb(255 255 255 / 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(255 255 255 / 0.035) 1px, transparent 1px);
+    background-size:
+      72px 72px,
+      72px 72px;
+    mask-image: linear-gradient(180deg, transparent, black 12%, black 78%, transparent);
+  }
+
+  .backdrop-color-field {
+    opacity: var(--reveal-opacity);
+    mix-blend-mode: screen;
+    transition: opacity 180ms ease-out;
+    filter: saturate(1.28);
+    background:
+      radial-gradient(ellipse at 18% 22%, rgb(255, 0, 0), transparent 24rem),
+      radial-gradient(ellipse at 80% 18%, rgb(122, 78, 255), transparent 26rem),
+      radial-gradient(ellipse at 68% 76%, rgb(255, 119, 189), transparent 25rem),
+      radial-gradient(ellipse at 26% 78%, rgb(0, 255, 162), transparent 23rem),
+      radial-gradient(ellipse at 50% 48%, rgb(255, 162, 0), transparent 22rem),
+      conic-gradient(from 120deg at 50% 50%, rgb(4, 222, 255), rgb(167 139 250 / 0.22), rgb(244 114 182 / 0.2), rgb(52 211 153 / 0.2), rgb(34 211 238 / 0.26));
+    background-position:
+      calc(0px + var(--scroll-shift-x)) calc(0px + var(--scroll-shift-y)),
+      calc(0px - var(--scroll-shift-x)) calc(0px + var(--scroll-shift-y)),
+      calc(0px + var(--scroll-shift-x)) calc(0px - var(--scroll-shift-y)),
+      calc(0px - var(--scroll-shift-x)) calc(0px - var(--scroll-shift-y)),
+      calc(0px + var(--scroll-shift-x)) calc(0px + var(--scroll-shift-y)),
+      center;
+    mask-image: radial-gradient(circle 25rem at var(--mouse-x) var(--mouse-y), rgb(0 0 0 / 0.51) 0 0%, rgb(0 0 0 / 0.42) 0%, transparent 50%);
+    -webkit-mask-image: radial-gradient(circle 25rem at var(--mouse-x) var(--mouse-y), rgb(0 0 0 / 0.51) 0 0%, rgb(0 0 0 / 0.42) 0%, transparent 50%);
+  }
+
+  .backdrop-reveal-lines {
+    opacity: calc(var(--reveal-opacity) * 0.34);
+    mix-blend-mode: screen;
+    transition: opacity 180ms ease-out;
+    background-image:
+      linear-gradient(115deg, transparent 0 42%, rgb(255 255 255 / 0.18) 49%, transparent 56%),
+      linear-gradient(rgb(255 255 255 / 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(255 255 255 / 0.08) 1px, transparent 1px);
+    background-size:
+      220px 220px,
+      34px 34px,
+      34px 34px;
+    background-position:
+      var(--scroll-shift-soft-x) var(--scroll-shift-soft-y),
+      var(--scroll-shift-soft-x) var(--scroll-shift-soft-y),
+      calc(0px - var(--scroll-shift-soft-x)) var(--scroll-shift-soft-y);
+    mask-image: radial-gradient(circle 1rem at var(--mouse-x) var(--mouse-y), rgb(0 0 0 / 1) 0 62%, transparent 100%);
+    -webkit-mask-image: radial-gradient(circle 1rem at var(--mouse-x) var(--mouse-y), rgb(0 0 0 / 1) 0 62%, transparent 100%);
+  }
+
+  .backdrop-vignette {
+    background:
+      linear-gradient(90deg, rgb(2 3 4 / 1), transparent 10%, transparent 90%, rgb(2 3 4 / 0.42)),
+      linear-gradient(180deg, rgb(2 3 4 / 1), transparent 14%, transparent 84%, rgb(2 3 4 / 0.56));
+  }
+
+  .section-band {
+    border-bottom: 1px solid rgb(255 255 255 / 0.06);
+  }
+
+  .button-primary,
+  .button-secondary,
+  .button-ghost,
+  .button-muted {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 border px-4 py-2.5 text-sm font-semibold transition;
+  }
+
+  .button-primary {
+    color: #050708;
+    background: var(--accent-hex);
+    border-color: rgb(var(--accent-rgb) / 0.74);
+  }
+
+  .button-primary:hover {
+    box-shadow: 0 0 0 4px rgb(var(--accent-rgb) / 0.14);
+  }
+
+  .button-secondary {
+    color: rgb(255 255 255 / 0.86);
+    background: rgb(var(--accent-rgb) / 0.1);
+    border-color: rgb(var(--accent-rgb) / 0.26);
+  }
+
+  .button-secondary:hover {
+    background: rgb(var(--accent-rgb) / 0.16);
+    border-color: rgb(var(--accent-rgb) / 0.44);
+  }
+
+  .button-ghost {
+    color: rgb(255 255 255 / 0.72);
+    background: rgb(255 255 255 / 0.03);
+    border-color: rgb(255 255 255 / 0.1);
+  }
+
+  .button-ghost:hover {
+    color: white;
+    border-color: rgb(255 255 255 / 0.18);
+    background: rgb(255 255 255 / 0.05);
+  }
+
+  .button-muted {
+    color: rgb(255 255 255 / 0.55);
+    background: rgb(255 255 255 / 0.035);
+    border-color: rgb(255 255 255 / 0.1);
+  }
+
+  .hero-copy::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+      linear-gradient(90deg, rgb(2 3 4 / 0.62) 0%, rgb(2 3 4 / 0.18) 46%, rgb(2 3 4 / 0.72) 100%),
+      linear-gradient(180deg, rgb(2 3 4 / 0.5), transparent 24%, transparent 70%, rgb(2 3 4 / 0.78));
+    pointer-events: none;
+  }
+
+  .hero-portrait-bg {
+    position: absolute;
+    inset: 0% -20% -15% -20%;
+    z-index: 0;
+    opacity: 0.96;
+    mix-blend-mode: screen;
+    pointer-events: none;
+    mask-image: radial-gradient(ellipse 56% 64% at 58% 45%, black 0 48%, rgb(0 0 0 / 0.78) 62%, transparent 82%);
+    -webkit-mask-image: radial-gradient(ellipse 56% 64% at 58% 45%, black 0 48%, rgb(0 0 0 / 0.78) 62%, transparent 82%);
+  }
+
+  .hero-portrait-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 62% 30%;
+    filter: grayscale(0.02) brightness(0.7) saturate(1.06) contrast(1.04);
+    transform: scale(1.02);
+    transition:
+      filter 520ms ease,
+      opacity 520ms ease,
+      transform 700ms ease;
+  }
+
+  .hero-copy:hover .hero-portrait-bg img,
+  .hero-copy:focus-within .hero-portrait-bg img {
+    filter: grayscale(0) brightness(1) saturate(1.12) contrast(1.03);
+    transform: scale(1.045);
+  }
+
+  .profile-panel {
+    @apply overflow-hidden border border-white/10 bg-white/[0.035];
+  }
+
+  .focus-row {
+    @apply flex items-center justify-between gap-4 border-b border-white/10 pb-3 last:border-b-0 last:pb-0;
+  }
+
+  .profile-metric {
+    @apply px-5 py-4 sm:px-6;
+  }
+
+  .icon-button {
+    @apply grid h-10 w-10 place-items-center border border-white/10 bg-white/[0.03] text-white/70 transition hover:border-white/20 hover:bg-white/[0.06] hover:text-white;
+  }
+
+  .accent-text {
+    color: var(--accent-hex);
+  }
+
+  .accent-bg {
+    background: var(--accent-hex);
+  }
+
+  .accent-soft {
+    background: rgb(var(--accent-rgb) / 0.24);
+  }
+
+  .accent-button-quiet {
+    background: var(--accent-hex);
+  }
+
+  .tech-chip {
+    color: rgb(255 255 255 / 0.68);
+    background: rgb(var(--accent-rgb) / 0.08);
+    border: 1px solid rgb(var(--accent-rgb) / 0.18);
+    @apply px-2.5 py-1.5 text-xs;
+  }
+
+  .project-card {
+    --accent-rgb: var(--card-accent-rgb);
+    --accent-hex: var(--card-accent-hex);
+    @apply overflow-hidden border border-white/10 bg-white/[0.03] transition;
+  }
+
+  .project-card:hover,
+  .project-card:focus-visible {
+    border-color: rgb(var(--card-accent-rgb) / 0.38);
+    box-shadow: 0 0 0 1px rgb(var(--card-accent-rgb) / 0.22), 0 24px 70px rgb(var(--card-accent-rgb) / 0.08);
+    outline: none;
+    transform: translateY(-2px);
+  }
+
+  .skill-card {
+    @apply border border-white/10 bg-white/[0.03] p-5 transition;
+  }
+
+  .skill-card:hover {
+    border-color: rgb(var(--card-accent-rgb) / 0.34);
+    background: rgb(var(--card-accent-rgb) / 0.045);
+  }
+
+  .timeline-item {
+    @apply border border-white/10 bg-white/[0.03] p-5;
+  }
+
+  .detail-block {
+    @apply border border-white/10 bg-white/[0.03] p-4;
+  }
+
+  .detail-label {
+    @apply text-xs font-medium text-white/45;
+  }
+
+  .case-study-grid {
+    @apply grid gap-3 sm:grid-cols-2;
+  }
+
+  .case-study-block {
+    @apply border border-white/10 bg-white/[0.025] p-4;
+  }
+
+  .case-study-block::before {
+    content: '';
+    display: block;
+    width: 2.75rem;
+    height: 2px;
+    margin-bottom: 0.85rem;
+    background: var(--accent-hex);
+  }
+
+  .case-study-title {
+    @apply text-sm font-semibold text-white;
+  }
+
+  .modal-overlay {
+    animation: modal-overlay-in 160ms ease-out both;
+  }
+
+  .modal-panel {
+    animation: modal-panel-in 180ms ease-out both;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .backdrop-color-field {
+    transition: none;
+  }
+}
