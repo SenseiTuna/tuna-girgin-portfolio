@@ -1,8 +1,21 @@
-# Tuna Girgin Portfolio
+# Tuna Girgin Portfolio Website
 
-Modern, bilingual portfolio site for internship, junior software, R&D, computer vision, game development and embedded systems applications.
+A modern bilingual portfolio website built for software engineering internship, junior developer, R&D, computer vision, game development, and embedded systems opportunities.
 
-## Stack
+## Overview
+
+This site presents selected projects, technical skills, education, work experience, contact links, and a downloadable CV in a responsive single-page experience.
+
+## Features
+
+- Turkish and English language support
+- Responsive dark interface
+- Interactive project detail views
+- Project-focused theme accents
+- Downloadable CV
+- GitHub and LinkedIn contact links
+
+## Tech Stack
 
 - Vite
 - React
@@ -16,39 +29,17 @@ npm install
 npm run dev
 ```
 
-On Windows PowerShell, if `npm` is blocked by execution policy, use:
-
-```powershell
-npm.cmd install
-npm.cmd run dev
-```
-
-## Build
+## Production Build
 
 ```bash
 npm run build
 ```
 
-## Deploying to Vercel
+## Deployment
 
-1. Push the project to GitHub.
-2. Import the repository on Vercel.
-3. Keep the default Vite settings:
-   - Build command: `npm run build`
-   - Output directory: `dist`
+The project is ready to deploy on Vercel using the default Vite settings:
 
-## Content Updates
-
-Main portfolio content lives in `src/data/portfolio.ts`.
-
-Project screenshots are prepared as optional assets. Add files with these names to make them appear automatically:
-
-- `public/projects/campus-vehicle-system.png`
-- `public/projects/olympus-voidbound.png`
-- `public/projects/tcdd-seat-finder.png`
-
-The CV button expects:
-
-- `public/tuna_girgin_cv.pdf`
-
-For a future profile image, add an image under `public/` and set `profileImage` in `src/data/portfolio.ts`.
+```txt
+Build command: npm run build
+Output directory: dist
+```
